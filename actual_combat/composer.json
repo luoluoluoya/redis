@@ -1,0 +1,23 @@
+{
+  "name": "vendor_name/actual_combat",
+  "description": "description",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "47302",
+      "email": "email@example.com"
+    }
+  ],
+  "require": {
+    "predis/predis": "^1.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "struct\\": "struct/"
+    },
+    "classmap": [
+      "."
+    ]
+  }
+}
