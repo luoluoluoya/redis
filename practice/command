@@ -1,0 +1,17 @@
+<?php
+
+require 'vendor/autoload.php';
+
+use Practice\Control\Recently;
+use \Practice\Control\CronAble;
+
+$commands = [
+    'clear:session' => Recently::class,
+];
+
+if (isset($commands[$argv[1]])) {
+    $command = new $commands[$argv[1]];
+    if ($command instanceof CronAble) {
+        $command->handler();
+    }
+}

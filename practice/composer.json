@@ -14,10 +14,7 @@
   },
   "autoload": {
     "psr-4": {
-      "struct\\": "struct/"
-    },
-    "classmap": [
-      "."
-    ]
+      "Practice\\": "./"
+    }
   }
 }

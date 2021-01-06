@@ -1,7 +1,17 @@
 <?php
 
+namespace Practice\Control;
+
+use Practice\Exception\DatabaseDataException;
 use Predis\Client;
-use struct\User;
+use Practice\Struct\User;
+
+/*
+ * 已认证：
+ *  certified(hash): [ {token => userId}, ]
+ * 最近登录：
+ *  recent(zset): [ [login_time, userId], ]
+ */
 
 class Auth
 {

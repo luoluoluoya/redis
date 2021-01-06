@@ -1,6 +1,6 @@
 <?php
 
-namespace struct;
+namespace Practice\Struct;
 
 class User
 {

@@ -1,11 +1,15 @@
 <?php
 
-use Predis\Client;
+namespace Practice\Control;
 
-class Recently
+use Practice\Util\Redis;
+
+
+class Recently implements CronAble
 {
-    public function handler(Client $client)
+    public function handler()
     {
+        $client = Redis::client();
         while (true) {
             // token过期
             $tokens = $client->zrangebyscore(self::recent_ident, 0, time() - self::expiration_of_cert);
@@ -26,7 +30,7 @@ class Recently
         }
     }
 
-    const limit = 0;
+    const limit = 10;
     const expiration_of_cert = 24 * 60 * 60;
     const recent_ident = 'recent';
 }
