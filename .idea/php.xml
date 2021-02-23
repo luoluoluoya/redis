@@ -4,6 +4,8 @@
     <include_path>
       <path value="$PROJECT_DIR$/actual_combat/vendor/composer" />
       <path value="$PROJECT_DIR$/actual_combat/vendor/predis/predis" />
+      <path value="$PROJECT_DIR$/practice/vendor/composer" />
+      <path value="$PROJECT_DIR$/practice/vendor/predis/predis" />
     </include_path>
   </component>
   <component name="PhpUnit">

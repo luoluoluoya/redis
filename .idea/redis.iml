@@ -7,6 +7,8 @@
       <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/actual_combat/vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/actual_combat/vendor/predis/predis" />
+      <excludeFolder url="file://$MODULE_DIR$/practice/vendor/composer" />
+      <excludeFolder url="file://$MODULE_DIR$/practice/vendor/predis/predis" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
