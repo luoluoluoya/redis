@@ -1,13 +1,13 @@
 * Redis从2.6版本开始引入对Lua脚本的支持，通过在服务器中嵌入Lua环境，Redis客户端可以使用Lua脚本，直接在服务器端原子地执行多个Redis命令。
 
-* 其中，使用 EVAL 命令可以直接对输入的脚本进行求值：
+* 其中，使用 EVAL 命令可以直接对输入的脚本进行求值:
 
   ```
   redis> EVAL "return 'hello world'" 0
   "hello world*
   ```
 
-  而使用EVALSHA命令则可以根据脚本的SHA1校验和来对脚本进行求值，但这个命令要求校验和对应的脚本必须至少被EVAL命令执行过一次：
+  而使用EVALSHA命令则可以根据脚本的SHA1校验和来对脚本进行求值，但这个命令要求校验和对应的脚本必须至少被EVAL命令执行过一次:
 
   ```
   redis> EVAL "return 1+1" 0
@@ -16,7 +16,7 @@
   redis> EVALSHA na27e7e8a43702b704 6d4f6a7ccf5b60cef6b9bd9M 0 // 上一个脚本的校验和 integer 2
   ```
 
-  或者这个校验和对应的脚本曾经被SCRIPT LOAD命令载入过：
+  或者这个校验和对应的脚本曾经被SCRIPT LOAD命令载入过:
 
   ```
   redis> SCRIPT LOAD "return 2*2”
@@ -29,7 +29,7 @@
 #### 创建并修改Lua环境
 
 * 为了在Redis服务器中执行Lua脚本，Redis在服务器内嵌了一个Lua环境(environment), 并对这个Lua环境进行了一系列修改，从而确保这个Lua环境可以满足Redis服务器的需要。
-* Redis服务器创建并修改Lua环境的整个过程由以下步骤组成：
+* Redis服务器创建并修改Lua环境的整个过程由以下步骤组成:
   1. 创建一个基础的Lua环境，之后的所有修改都是针对这个环境进行的。
   2. 载入多个函数库到Lua环境里面，让Lua脚本可以使用这些函数库来进行数据操作。
   3. 创建全局表格redis,这个表格包含了对Redis进行操作的函数，比如用于在Lua 脚本中执行Redis命令的redis.call函数。
